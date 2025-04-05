@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 import 'screens/home_screen.dart';
 import 'screens/diet_plan_screen.dart';
 import 'screens/workout_screen.dart';
-import 'screens/chemo_tracking_screen.dart'; 
+import 'screens/chemo_tracking_screen.dart';
 import 'screens/mental_health_screen.dart';
 import 'screens/register_screen.dart';
 import 'config/theme.dart';
 
-
-
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
 
   runApp(const MyApp());
 }

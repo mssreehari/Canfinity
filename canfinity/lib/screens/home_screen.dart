@@ -6,16 +6,13 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   Future<void> _handleUserIconPress(BuildContext context) async {
-    // Placeholder logic for user details
     final name = null;
     final age = null;
     final cancerType = null;
 
     if (name == null || age == null || cancerType == null) {
-      // Navigate to the registration screen if not registered
       Navigator.pushNamed(context, '/register');
     } else {
-      // Show user details if already registered
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
@@ -65,26 +62,15 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              background: Container(
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.vertical(
-                    bottom: Radius.circular(30),
-                  ),
-                  image: const DecorationImage(
-                    image: AssetImage('assets/images/holding_hands_cancer.jpg'),
-                    fit: BoxFit.cover,
-                    colorFilter: ColorFilter.mode(
-                      Color.fromRGBO(255, 192, 203, 0.35),
-                      BlendMode.overlay,
-                    ),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppTheme.primary.withOpacity(0.3),
-                      blurRadius: 12,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
+              background: ClipRRect(
+                borderRadius: const BorderRadius.vertical(
+                  bottom: Radius.circular(30),
+                ),
+                child: Image.asset(
+                  'assets/images/holding_hands_cancer.jpg',
+                  fit: BoxFit.cover,
+                  color: const Color.fromRGBO(255, 192, 203, 0.35),
+                  colorBlendMode: BlendMode.overlay,
                 ),
               ),
             ),
@@ -196,7 +182,6 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  // Added inspirational message and support button
                   const SizedBox(height: 32),
                   Container(
                     padding: const EdgeInsets.all(20),
@@ -241,12 +226,12 @@ class HomeScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(30),
                             ),
                           ),
-                          child: Row(
+                          child: const Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              const Icon(Icons.support_agent, size: 20),
-                              const SizedBox(width: 8),
-                              const Text(
+                              Icon(Icons.support_agent, size: 20),
+                              SizedBox(width: 8),
+                              Text(
                                 "Connect with Support",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
