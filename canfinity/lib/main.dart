@@ -10,8 +10,7 @@ import 'screens/register_screen.dart';
 import 'config/theme.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: ".env");
+
 
   runApp(const MyApp());
 }
