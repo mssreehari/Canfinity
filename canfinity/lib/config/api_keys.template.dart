@@ -1,5 +1,5 @@
 class ApiKeys {
-  static const huggingFaceApiKey = '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';
+  static const huggingFaceApiKey = 'PASTE_YOUR_API_KEY';
   // Add other API keys here
 }
 
